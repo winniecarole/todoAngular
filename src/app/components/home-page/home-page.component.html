@@ -1,0 +1,45 @@
+<nav class="navbar navbar-light ">
+    <div class="container-fluid">
+        <h4>ToDo-Liste</h4>
+    </div>
+</nav>
+<div class="todo">
+    <span>New Element</span>
+    <button type="button" class="btn btn-primary" (click)="open(mymodal)">Add</button>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+            </tr>
+             </thead>
+            <tbody *ngFor="let item of todoItemListe" >
+                <tr>
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.title}}</td>
+                    <td>{{item.date | date:'medium'}}</td>
+                    <td><button type="button" class="btn btn-secondary btn-sm " (click)="additem(item)">Done</button></td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+<button routerLink="/done" class="btn btn-primary btn-success">All Done</button>
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h6>New Entry</h6>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Title</p>
+    <input type="text" [(ngModel)]="title">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cross click')">Schließen</button>
+    <button type="button" class="btn btn-outline-dark btn-success" (click)="modal.close('Save click')">speichern</button>
+  </div>
+</ng-template>
+

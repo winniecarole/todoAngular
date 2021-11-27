@@ -1,0 +1,24 @@
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Title</th>
+    <th scope="col">Date</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let items of item" >
+  <tr>
+    <th scope="row">{{items.id}}</th>
+    <td>{{items.title}}</td>
+    <td>{{items.date | date:'medium'}}</td>
+    <td>
+       <button type="button" class="btn btn-secondary btn-sm  "(click)="unDone(items)">undone</button>
+       <button type="button" class="btn btn-secondary btn-sm btn-danger" (click)="delete(items)">delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<button routerLink="/home-page" class="btn btn-secondary home ">home</button>

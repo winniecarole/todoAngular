@@ -1,0 +1,26 @@
+.navbar{
+  background-color: black;
+}
+h4{
+  color: white;
+}
+.todo{
+  padding-top: 2em ;
+  padding-left: 1em;
+}
+.todo span{
+  color: black;
+  padding-right: 1.5em;
+}
+.todoElement{
+  padding-right: 1.5em;
+}
+.modal-header h6{
+  color: black;
+  font-size: 2em;
+}
+input{
+  width: 28em;
+}
+
+
